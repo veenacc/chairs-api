@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   #  Index action
   get "/chairs" => "chairs#index"
+  post "/chairs" => "chairs#create"
+  get "/chairs/:id" => "chairs#show"
+  # post "chairs/id" =>
 end
