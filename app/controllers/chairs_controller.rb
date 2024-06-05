@@ -26,11 +26,22 @@ class ChairsController < ApplicationController
 
   def update
     #update item based on id and new parameters 
-     
+    @chair = Chair.find_by(id: params[:id])
+    @chair.chairType= params[:chairType] ||  @chair.chairType
+    @chair.color= params[:color] ||  @chair.color
+    @chair.price= params[:price] ||  @chair.price
+    if @chair.save
+      render template: "chairs/show" 
+    else
+      render json: {error: @chairs.errors.full_messages}
+    end
   end
 
   def destroy
     #delete item based on an id"
+    @chair = Chair.find_by(id: params[:id])
+    @chair.destroy
+    render json: {message: "Deleted #{params[:id]}"}
   end
 
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/chairs" => "chairs#index"
   post "/chairs" => "chairs#create"
   get "/chairs/:id" => "chairs#show"
-  patch "chairs/:id" => "chairs#update"
-  delete "chairs/:id" =>"chairs/destroy"
+  patch "/chairs/:id" => "chairs#update"
+  delete "/chairs/:id" => "chairs#destroy"
   
 end
