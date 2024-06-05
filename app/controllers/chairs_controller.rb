@@ -24,5 +24,14 @@ class ChairsController < ApplicationController
     end
   end
 
+  def update
+    #update item based on id and new parameters 
+     
+  end
+
+  def destroy
+    #delete item based on an id"
+  end
+
 end
 
